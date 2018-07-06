@@ -1,6 +1,6 @@
 <template lang="pug">
   transition(name='fade-in')
-    .toast-content(v-if='toast_show')
+    .toast-content(v-if='toast_show', :style='finalStyle')
        span {{msg_content}}
 </template>
 
@@ -11,7 +11,29 @@ export default {
     return {
       toast_show: 0,
       msg_content: 'it is toast',
-      duration: 2000
+      duration: 2000,
+      top_style: 'top: 20vh',
+      pos: 'bottom',
+      final_style: ''
+    }
+  },
+  computed: {
+    finalStyle() {
+
+      console.log(this.pos)
+      switch (this.pos) {
+        case 'bottom':
+          return 'bottom: 20vh'
+          break;
+        case 'top':
+          return 'top: 10vh'
+          break;
+        case 'center':
+          return 'bottom: 45vh'
+          break;
+        default:
+          return 'bottom: 20vh'
+      }
     }
   },
   methods: {
@@ -35,6 +57,7 @@ export default {
     bottom: 4rem
     text-align: center
     width: 100%
+    z-index: 3000
     span
       padding: 0.3rem 0.8rem
       color: #fff

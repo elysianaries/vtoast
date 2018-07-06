@@ -11,12 +11,13 @@ let init = () => {
   })
 }
 
-let showToast = (msg, duration=2000) => {
+let showToast = (msg, pos='bottom', duration=2000,) => {
   if (!hasShow) {
     hasShow = true
     init()
     instance.msg_content = msg
     instance.duration = duration
+    instance.pos = pos
     instance.show()
     setTimeout(() => {
       hasShow = false
