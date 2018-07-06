@@ -9,7 +9,7 @@ export default {
   name: 'vtoast',
   data() {
     return {
-      toast_show: 1,
+      toast_show: 0,
       msg_content: 'it is toast',
       duration: 2000
     }
@@ -31,16 +31,16 @@ export default {
   .fade-in-enter, .fade-in-leave-active
     opacity: 0
   .toast-content
-     position: fixed
-     top: 2rem
-     text-align: center
-     width: 100%
-     span
-       padding: 0.3rem 0.8rem
-       color: #fff
-       background-color: #4c4c4c
-       font-size: 0.7rem
-       border-radius: 0.3rem
+    position: fixed
+    bottom: 4rem
+    text-align: center
+    width: 100%
+    span
+      padding: 0.3rem 0.8rem
+      color: #fff
+      background-color: #4c4c4c
+      font-size: 0.7rem
+      border-radius: 0.3rem
 
 
 </style>

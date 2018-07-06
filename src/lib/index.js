@@ -9,7 +9,6 @@ let init = () => {
   instance = new ToastConstructor({
     el: document.createElement('div')
   })
-  // document.body.appendChild(instance.$el);
 }
 
 let showToast = (msg, duration=2000) => {
