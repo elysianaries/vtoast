@@ -1,7 +1,7 @@
 {
-  "name": "vtoast",
+  "name": "vu-toast",
   "description": "toast for vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "AriesKe <506917596@qq.com>",
   "license": "MIT",
   "private": false,

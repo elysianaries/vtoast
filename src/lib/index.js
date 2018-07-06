@@ -3,12 +3,15 @@ import vueToast from './vtoast.vue'
 
 let ToastConstructor = Vue.extend(vueToast)
 let hasShow = false
+let instance
+
 let init = () => {
-  let instance = new ToastConstructor({
+  instance = new ToastConstructor({
     el: document.createElement('div')
   })
-  document.body.appendChild(instance.$el);
+  // document.body.appendChild(instance.$el);
 }
+
 let showToast = (msg, duration=2000) => {
   if (!hasShow) {
     hasShow = true
@@ -22,10 +25,11 @@ let showToast = (msg, duration=2000) => {
   }
 }
 
-const testToast = {
+const finalToast = {
   install(Vue, options) {
     Vue.prototype.vtoast = showToast
   }
 }
 
-export default testToast
+
+export default finalToast

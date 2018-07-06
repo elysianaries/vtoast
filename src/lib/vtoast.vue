@@ -40,7 +40,7 @@ export default {
        color: #fff
        background-color: #4c4c4c
        font-size: 0.7rem
-       border-radius: 0.2rem
+       border-radius: 0.3rem
 
 
 </style>
