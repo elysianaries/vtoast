@@ -2,27 +2,21 @@ import Vue from 'vue'
 import vueToast from './vtoast.vue'
 
 let ToastConstructor = Vue.extend(vueToast)
-let hasShow = false
 let instance
 
 let init = () => {
   instance = new ToastConstructor({
     el: document.createElement('div')
   })
+  document.body.append(instance.$el)
 }
 
 let showToast = (msg, pos='bottom', duration=2000,) => {
-  if (!hasShow) {
-    hasShow = true
     init()
     instance.msg_content = msg
     instance.duration = duration
     instance.pos = pos
     instance.show()
-    setTimeout(() => {
-      hasShow = false
-    }, duration)
-  }
 }
 
 const finalToast = {
@@ -30,6 +24,5 @@ const finalToast = {
     Vue.prototype.vtoast = showToast
   }
 }
-
 
 export default finalToast
