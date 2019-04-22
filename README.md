@@ -14,7 +14,7 @@ npm install vu-toast --save
 ```
 main.js
 import VueToast from 'vu-toast'
-Vue.use('VueToast')
+Vue.use(VueToast)
 ```
 
 ```
